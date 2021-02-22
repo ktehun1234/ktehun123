@@ -32,9 +32,7 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
-    <div class="content-wrapper">
-    <h1>여기가 본문 입니다.</h1>
-    </div>
+    
 
 <!-- jQuery -->
 <script src="resources/plugins/jquery/jquery.min.js"></script>
