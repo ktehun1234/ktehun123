@@ -30,8 +30,8 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public int update(BoardVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		return ses.update(namespace+".updateBoard",vo);
+		System.out.println("DAO단 : "+vo);
+		return ses.update(namespace + ".updateBoard", vo);
 	}
 
 	@Override

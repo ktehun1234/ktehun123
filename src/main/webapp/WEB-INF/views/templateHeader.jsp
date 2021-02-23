@@ -41,10 +41,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="HomeController.java" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">board</a>
+        <a href="/board/listAll" class="nav-link">board</a>
       </li>
     </ul>
 
@@ -72,7 +72,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="resources/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src=resources/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -160,7 +160,7 @@
     </ul>
   </nav>
   <!-- /.navbar -->
-
+</div>
 
 <!-- jQuery -->
 <script src="resources/plugins/jquery/jquery.min.js"></script>

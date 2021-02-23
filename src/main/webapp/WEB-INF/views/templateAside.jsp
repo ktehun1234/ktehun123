@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="resources/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+
 
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
