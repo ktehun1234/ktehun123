@@ -29,8 +29,15 @@
   <link rel="stylesheet" href="resources/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="resources/plugins/summernote/summernote-bs4.min.css">
+  <script src="resources/plugins/jquery/jquery.min.js"></script>
+	<script>
+	$(function(){
+		alert("!");
+	});
+	</script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+
 	<%@include file="templateHeader.jsp" %>
 	<%@include file="templateAside.jsp" %>
 	<div class="content-wrapper">

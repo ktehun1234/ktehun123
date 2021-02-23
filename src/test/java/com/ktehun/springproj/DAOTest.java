@@ -32,8 +32,8 @@ public class DAOTest {
 //      
 //   
 //   }
-@Test
-public void readBoard() throws Exception {
-}
-
+   @Test
+   public void readBoard() throws Exception{
+	   System.out.println(dao.readBoard(2));
+   }
 }
