@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ktehun.domain.BoardVO;
+import com.ktehun.domain.PagingCriteria;
 import com.ktehun.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class) // 현재 클래스가 Sprint-test(JUnit4) 와 함께 동작
@@ -32,8 +32,10 @@ public class DAOTest {
 //      
 //   
 //   }
-   @Test
-   public void readBoard() throws Exception{
-	   System.out.println(dao.readBoard(2));
-   }
+  @Test
+  public void testListPage() throws Exception{
+   int page = 1;
+ System.out.println(dao.listBoardPaging(page).toString());
+}
+ 
 }

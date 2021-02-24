@@ -3,6 +3,7 @@ package com.ktehun.service;
 import java.util.List;
 
 import com.ktehun.domain.BoardVO;
+import com.ktehun.domain.PagingCriteria;
 
 public interface BoardService {
 	public boolean insert(BoardVO vo) throws Exception;
@@ -14,5 +15,7 @@ public interface BoardService {
 	public boolean remove(int no) throws Exception;
 	
 	public List<BoardVO> listAll() throws Exception;
+	
+	public List<BoardVO> listCriteria(PagingCriteria cri) throws Exception;
 
 }

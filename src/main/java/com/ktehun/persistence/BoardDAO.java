@@ -3,6 +3,7 @@ package com.ktehun.persistence;
 import java.util.List;
 
 import com.ktehun.domain.BoardVO;
+import com.ktehun.domain.PagingCriteria;
 
 public interface BoardDAO {
 	//글 쓰기
@@ -16,4 +17,8 @@ public interface BoardDAO {
 	public int delete(int no) throws Exception;
 	
 	public List<BoardVO> listBoard() throws Exception;
+	
+	//페이징
+	public List<BoardVO> listBoardPaging(int page)throws Exception;
+	public List<BoardVO> listBoardCriteria(PagingCriteria cri) throws Exception; 
 }

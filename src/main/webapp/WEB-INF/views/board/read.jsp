@@ -82,7 +82,7 @@
             <div class="form-group">
             <label class="control-label col-sm-2" for="content">조회수 :</label>
                <div class="col-sm-10">
-               ${board.viewcnt }
+               ${board.viewnt }
                </div>
             </div>
       </div>
