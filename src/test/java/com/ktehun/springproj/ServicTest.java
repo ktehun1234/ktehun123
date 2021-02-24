@@ -57,6 +57,6 @@ public class ServicTest {
 	
 	@Test
 	public void list()throws Exception{
-		service.listAll();
+		service.getToTablBoardCnt();
 	}
 }

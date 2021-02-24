@@ -32,10 +32,13 @@ public class DAOTest {
 //      
 //   
 //   }
-  @Test
-  public void testListPage() throws Exception{
-   int page = 1;
- System.out.println(dao.listBoardPaging(page).toString());
-}
- 
+//  @Test
+//  public void testListPage() throws Exception{
+//   int page = 1;
+// System.out.println(dao.listBoardPaging(page).toString());
+//}
+ @Test
+ public void testgetBoardCount() throws Exception {
+	 System.out.println(dao.getTotalBoardCnt());
+ }
 }

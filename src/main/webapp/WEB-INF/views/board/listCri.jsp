@@ -93,7 +93,32 @@
                      onclick="location.href='/board/register';">글쓰기</button>
                </div>
                
+                           <div class="text-center">
+               <ul class="pagination"style="text-align: center;">
+      
+              <c:if test="${PagingParam.prev }">
+                  <li class="page-item">
+                     <a class="page-link" href="listCri?page=${param.page -1 }">prev</a>
+                  </li>
+               </c:if>
+				
+                  <c:forEach begin="${PagingParam.startPage}" end="${PagingParam.endPage }" var="pageNo">
 
+                     <li class="page-item">
+                     	<a class="page-link" href="listCri?page=${pageNo }">${pageNo }</a>
+                     </li>
+
+                  </c:forEach>
+              
+               <c:if test="${PagingParam.next }">
+                  <li class="page-item">
+                     <a class="page-link" href="listCri?page=${param.page + 1 }">next</a>
+                  </li>
+               </c:if>
+
+                </ul>
+            </div>
+</div>
 	  	</c:when>
 	  	<c:otherwise>
 	  	<h3>게시물을 얻어오지  못했습니다</h3>

@@ -21,4 +21,5 @@ public interface BoardDAO {
 	//페이징
 	public List<BoardVO> listBoardPaging(int page)throws Exception;
 	public List<BoardVO> listBoardCriteria(PagingCriteria cri) throws Exception; 
+	public int getTotalBoardCnt()throws Exception;
 }

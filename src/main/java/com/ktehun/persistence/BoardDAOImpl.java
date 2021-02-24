@@ -61,5 +61,8 @@ public class BoardDAOImpl implements BoardDAO {
 		// TODO Auto-generated method stub
 		return ses.selectList(namespace + ".listBoardCriteria",cri);
 	}
+	public int getTotalBoardCnt()  throws Exception {
+		return ses.selectOne(namespace+".getTotalBoardCnt");
+	}
 
 }

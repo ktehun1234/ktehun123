@@ -6,6 +6,8 @@ import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
 
 public interface BoardService {
+	public int getToTablBoardCnt()throws Exception;
+
 	public boolean insert(BoardVO vo) throws Exception;
 	
 	public BoardVO read(int no) throws Exception;

@@ -35,5 +35,9 @@ public class PagingCriteria {
 	public String toString() {
 		return "PagingCriteria [page=" + page + ", perPageNum=" + perPageNum + "]";
 	}
+	public int getPage() {
+
+		return this.page;
+	}
 	
 }

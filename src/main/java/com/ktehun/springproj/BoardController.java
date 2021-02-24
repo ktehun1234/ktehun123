@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
+import com.ktehun.domain.PagingParam;
 import com.ktehun.service.BoardService;
 
 
@@ -91,7 +92,14 @@ public class BoardController {
 	@RequestMapping(value = "/listCri", method=RequestMethod.GET)
 	public void listAll(PagingCriteria cri,Model model) throws Exception {
 		logger.info("페이징을 이용한 전체 목록 출력.....");
-		model.addAttribute("boardList",service.listCriteria(cri));
+		model.addAttribute("boardList",service.listCriteria(cri));//게시물 데이터
+		logger.info(cri.toString());
+		PagingParam pp = new PagingParam();
+		pp.setCri(cri);
+		pp.setTotalCount(service.getToTablBoardCnt());
+		System.out.println("보고 싶은 값: " +pp.getEndPage() * cri.getPerPageNum());
+		System.out.println(pp.toString());
+		model.addAttribute("PagingParam",pp);
 	}
 	
 	
