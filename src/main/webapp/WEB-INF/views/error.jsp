@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,7 +17,7 @@
   <!-- Tempusdominus Bootstrap 4 -->
   <link rel="stylesheet" href="../resources/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="./resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="../resources/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
@@ -29,20 +28,28 @@
   <link rel="stylesheet" href="../resources/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../resources/plugins/summernote/summernote-bs4.min.css">
+  
   <script src="../resources/plugins/jquery/jquery.min.js"></script>
-	<script>
-	</script>
+
+   <script>
+      
+   </script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+   <%@include file="templateHeader.jsp"%>
+   <%@include file="templateAside.jsp"%>
+   <div class="content-wrapper">
 
-	<%@include file="templateHeader.jsp" %>
-	<%@include file="templateAside.jsp" %>
-	<div class="content-wrapper">
-    <h1>에러페이지 입니다.</h1>
-    <hr/>
-    <h3>돌아가주세요</h3>
-    </div>
-	<%@include file="templatefooter.jsp" %>
-	
+      <div class="container">
+         <h1>error 발생</h1>
+         <hr />
+         
+         잠시 후 다시 시도해 주세요. 에러가 지속되면 관리자에게 연락 바랍니다!
+         
+      </div>
+   </div>
+
+
+   <%@include file="templatefooter.jsp"%>
 </body>
 </html>
