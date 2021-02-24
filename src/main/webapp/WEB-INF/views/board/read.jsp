@@ -34,9 +34,6 @@
   
   <script src="../resources/plugins/jquery/jquery.min.js"></script>
   <script>
-  $(function(){
-		alert("!");
-	});
   </script>
   
   
@@ -46,7 +43,13 @@
    <%@include file="../templateHeader.jsp" %>
    <%@include file="../templateAside.jsp" %>
    
-   <div class="content-wrapper">   <!--  여기가 본문 시작 -->
+   <div class="content-wrapper"> 
+     <!--  여기가 본문 시작 -->
+     <c:choose>
+     <c:when test='${board.isdelete == "y"}'>
+     	<h1>게시글이 없습니다.</h1>
+     </c:when>
+     <c:otherwise>
       <h1> ${board.no }번 글</h1>
    <div class="container">
 
@@ -91,6 +94,8 @@
          <button type="button" class="btn btn-primary" 
          onclick="location.href='/board/listAll';">리스트페이지로</button>
    </div>
+   </c:otherwise>
+   </c:choose>
    </div>
    
    
