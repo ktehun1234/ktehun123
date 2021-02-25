@@ -69,7 +69,7 @@ public class BoardController {
 		if(service.remove(no)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/board/listAll";
+		return "redirect:/board/listCri";
 		
 	}
 	
@@ -87,7 +87,7 @@ public class BoardController {
 		if(service.modify(vo)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/board/listAll";
+		return "redirect:/board/listCri";
 	}
 	
 	@RequestMapping(value = "/listCri", method=RequestMethod.GET)
