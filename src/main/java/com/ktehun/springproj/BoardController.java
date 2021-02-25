@@ -103,12 +103,17 @@ public class BoardController {
 		model.addAttribute("PagingParam",pp);
 	}
 	@RequestMapping(value = "/search", method=RequestMethod.GET)
-	public String search(SerachCriteria scri,Model model) throws Exception {
+	public String search(SerachCriteria scri,PagingCriteria cri,Model model) throws Exception {
 		logger.info("검색을 시작합니다");
 		System.out.println(scri.toString());
-		model.addAttribute("boardList",service.goSearch(scri));
+		model.addAttribute("boardList",service.goSearch(scri,cri));
 		
-		return "/board/listCri";
+		PagingParam pp = new PagingParam();
+		pp.setCri(cri);
+		pp.setTotalCount(service.serchBoardCnt(scri));
+		model.addAttribute("PagingParam",pp);
+		model.addAttribute("Search",scri);
+		return "board/listCri";
 		
 	}
 }

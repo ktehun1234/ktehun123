@@ -44,6 +44,19 @@
   		<if test="searchType == 'writer'">
   			writer like concat('%',#{searchWord},'%')
   		</if>
-  		order by no desc
+  		order by no desc limit #{pageStart},#{perPageNum}
+  	</select>
+  	
+  		<select id="serchBoardCnt" resultType="int">
+  		select count(*) from test.tbl_board where 
+  		<if test="searchType == 'title'">
+  			title like concat('%',#{searchWord},'%')
+  		</if>
+  		<if test="searchType == 'content'">
+  			content like concat('%',#{searchWord},'%')
+  		</if>
+  		<if test="searchType == 'writer'">
+  			writer like concat('%',#{searchWord},'%')
+  		</if>	
   	</select>
   </mapper>

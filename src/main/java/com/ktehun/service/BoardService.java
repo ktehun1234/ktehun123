@@ -21,6 +21,7 @@ public interface BoardService {
 	
 	public List<BoardVO> listCriteria(PagingCriteria cri) throws Exception;
 
-	public List<BoardVO>  goSearch(SerachCriteria scri) throws Exception;
-
+	public List<BoardVO>  goSearch(SerachCriteria scri,PagingCriteria cri) throws Exception;
+	public int serchBoardCnt(SerachCriteria scri)throws Exception;
+	
 }

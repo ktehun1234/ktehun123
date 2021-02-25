@@ -47,6 +47,7 @@
    <%@include file="../templateHeader.jsp" %>
    <%@include file="../templateAside.jsp" %>
 	  <div class="content-wrapper">
+	  <h1>${ pageScope.name  }</h1>
 	  <c:choose>
 	  	
 	  	<c:when test="${boardList != null}">
@@ -114,21 +115,21 @@
       
               <c:if test="${PagingParam.prev }">
                   <li class="page-item">
-                     <a class="page-link" href="listCri?page=${param.page -1 }">prev</a>
+                     <a class="page-link" href="listCri?page=${PagingParam.cri.page -1 }">prev</a>
                   </li>
                </c:if>
 				
                   <c:forEach begin="${PagingParam.startPage}" end="${PagingParam.endPage }" var="pageNo">
-
-                     <li class="page-item">
+	
+	                     <li class="page-item">
                      	<a class="page-link" href="listCri?page=${pageNo }">${pageNo }</a>
                      </li>
-
+					
                   </c:forEach>
               
                <c:if test="${PagingParam.next }">
                   <li class="page-item">
-                     <a class="page-link" href="listCri?page=${param.page + 1 }">next</a>
+                     <a class="page-link" href="listCri?page=${PagingParam.cri.page+ 1 }">next</a>
                   </li>
                </c:if>
 

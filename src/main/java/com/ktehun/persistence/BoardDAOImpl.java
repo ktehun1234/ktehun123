@@ -1,6 +1,8 @@
 package com.ktehun.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -67,10 +69,18 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> goSearch(SerachCriteria scri) throws Exception {
-		// TODO Auto-generated method stub
-		return ses.selectList(namespace+".serchBoard",scri);
+	public List<BoardVO> goSearch(SerachCriteria scri,PagingCriteria cri) throws Exception {
+		Map<String,Object> param = new HashMap<String, Object>();
+		param.put("searchType",scri.getSearchType());
+		param.put("searchWord",scri.getSearchWord());
+		param.put("pageStart", cri.getPageStart());
+		param.put("perPageNum", cri.getPerPageNum());
+		return ses.selectList(namespace+".serchBoard",param);
 	}
+	public int serchBoardCnt(SerachCriteria scri)  throws Exception {
+		return ses.selectOne(namespace+".serchBoardCnt",scri);
+	}
+
 	
 	
 
