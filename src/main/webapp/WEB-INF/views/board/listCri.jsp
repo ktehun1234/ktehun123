@@ -77,7 +77,7 @@
                   	<c:otherwise>
                   	<tr>
                         <td>${board.no }</td>
-                        <td><a href="/board/read?no=${board.no}">${board.title }</a></td>
+                        <td><a href="/board/read?no=${board.no}&page=${PagingParam.cri.page}">${board.title }</a></td>
                         <td>${board.writer }</td>
                         <td><span class="sendTime" id="${status.count }"><fmt:formatDate
                                  value="${board.regdate }" type="both"

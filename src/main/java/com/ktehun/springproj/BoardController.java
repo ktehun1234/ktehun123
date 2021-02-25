@@ -55,10 +55,11 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/read", method=RequestMethod.GET)
-	public void readBoard(@RequestParam("no") int no, Model model) throws Exception { 
+	public void readBoard(@RequestParam("no") int no,@RequestParam("page") String page,Model model) throws Exception { 
 		// @RequestParam("no") int no -> int no = request.getParameter("no");
 		logger.info("/read... get호출");
 		System.out.println("no : " + no);
+		System.out.println("page : " + page);
 		model.addAttribute("board", service.read(no));
 	}
 	
@@ -97,7 +98,6 @@ public class BoardController {
 		PagingParam pp = new PagingParam();
 		pp.setCri(cri);
 		pp.setTotalCount(service.getToTablBoardCnt());
-		System.out.println("보고 싶은 값: " +pp.getEndPage() * cri.getPerPageNum());
 		System.out.println(pp.toString());
 		model.addAttribute("PagingParam",pp);
 	}

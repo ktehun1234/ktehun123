@@ -92,7 +92,7 @@
          <button type="button" class="btn btn-info" 
          id="deleteBoard" onclick="location.href='/board/remove?no=${board.no}';">삭제하기</button>
          <button type="button" class="btn btn-primary" 
-         onclick="location.href='/board/listAll';">리스트페이지로</button>
+         onclick="location.href='/board/listCri?page=${param.page}';">리스트페이지로</button>
    </div>
    </c:otherwise>
    </c:choose>
