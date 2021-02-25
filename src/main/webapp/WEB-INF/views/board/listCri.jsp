@@ -47,7 +47,7 @@
    <%@include file="../templateHeader.jsp" %>
    <%@include file="../templateAside.jsp" %>
 	  <div class="content-wrapper">
-	  <h1>${ pageScope.name  }</h1>
+	  <h1>${ name }</h1>
 	  <c:choose>
 	  	
 	  	<c:when test="${boardList != null}">
@@ -122,7 +122,7 @@
                   <c:forEach begin="${PagingParam.startPage}" end="${PagingParam.endPage }" var="pageNo">
 	
 	                     <li class="page-item">
-                     	<a class="page-link" href="listCri?page=${pageNo }">${pageNo }</a>
+                     	<a class="page-link" href="listCri?page=${pageNo }&searchType=${Search.searchType}&searchWord=${Search.">${pageNo }</a>
                      </li>
 					
                   </c:forEach>
