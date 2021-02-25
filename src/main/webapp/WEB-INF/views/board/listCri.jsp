@@ -75,6 +75,7 @@
                   	</tr>
                   	</c:when>
                   	<c:otherwise>
+                  
                   	<tr>
                         <td>${board.no }</td>
                         <td><a href="/board/read?no=${board.no}&page=${PagingParam.cri.page}">${board.title }</a></td>
@@ -89,10 +90,25 @@
                   </c:forEach>
                </table>
                <div>
+               <!--  글쓰기 -->
                   <button type="button" class="btn btn-info" style="float: right;"
                      onclick="location.href='/board/register';">글쓰기</button>
                </div>
+               <!--  검색 -->
+               <div style="float: right;display: inline-block;margin-right: 15px">
+               	<form action="/board/search" method="get">
+               	<select name = "searchType">
+               		<option value="n">-----------</option>
+               		<option value="title">제목</option>
+               		<option value="content">내용</option>
+               		<option value="writer">작성자</option>
+               	</select>
+               	<input type="text" name="searchWord" placeholder="검색어 입력...">
+               	<input type="submit" id="goSearch" value="검색"/>
+               	</form>
+               </div>
                
+               <!--  페이징 -->
                            <div class="text-center">
                <ul class="pagination"style="text-align: center;">
       

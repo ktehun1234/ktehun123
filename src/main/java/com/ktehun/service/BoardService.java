@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
+import com.ktehun.domain.SerachCriteria;
 
 public interface BoardService {
 	public int getToTablBoardCnt()throws Exception;
@@ -19,5 +20,7 @@ public interface BoardService {
 	public List<BoardVO> listAll() throws Exception;
 	
 	public List<BoardVO> listCriteria(PagingCriteria cri) throws Exception;
+
+	public List<BoardVO>  goSearch(SerachCriteria scri) throws Exception;
 
 }

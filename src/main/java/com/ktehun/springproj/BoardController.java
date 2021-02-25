@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
 import com.ktehun.domain.PagingParam;
+import com.ktehun.domain.SerachCriteria;
 import com.ktehun.service.BoardService;
 
 
@@ -101,6 +102,13 @@ public class BoardController {
 		System.out.println(pp.toString());
 		model.addAttribute("PagingParam",pp);
 	}
-	
-	
+	@RequestMapping(value = "/search", method=RequestMethod.GET)
+	public String search(SerachCriteria scri,Model model) throws Exception {
+		logger.info("검색을 시작합니다");
+		System.out.println(scri.toString());
+		model.addAttribute("boardList",service.goSearch(scri));
+		
+		return "/board/listCri";
+		
+	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
+import com.ktehun.domain.SerachCriteria;
 import com.ktehun.persistence.BoardDAO;
 
 
@@ -75,6 +76,12 @@ public class BoardServiceImpl implements BoardService {
 	public int getToTablBoardCnt() throws Exception {
 		
 		return dao.getTotalBoardCnt();
+	}
+
+	@Override
+	public List<BoardVO>  goSearch(SerachCriteria scri)throws Exception{
+		return dao.goSearch(scri);
+		
 	}
 
 

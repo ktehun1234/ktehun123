@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
+import com.ktehun.domain.SerachCriteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -64,5 +65,13 @@ public class BoardDAOImpl implements BoardDAO {
 	public int getTotalBoardCnt()  throws Exception {
 		return ses.selectOne(namespace+".getTotalBoardCnt");
 	}
+
+	@Override
+	public List<BoardVO> goSearch(SerachCriteria scri) throws Exception {
+		// TODO Auto-generated method stub
+		return ses.selectList(namespace+".serchBoard",scri);
+	}
+	
+	
 
 }
