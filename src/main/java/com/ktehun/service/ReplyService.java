@@ -7,7 +7,7 @@ import com.ktehun.domain.ReplyVO;
 public interface ReplyService {
 public void create(ReplyVO vo) throws Exception;
 	
-	public List<ReplyVO> read(int no) throws Exception;
+	public List<ReplyVO> read(int bno) throws Exception;
 	
 	public void upadte(ReplyVO vo) throws Exception;
 	

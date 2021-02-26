@@ -12,7 +12,7 @@ import com.ktehun.domain.ReplyVO;
 public class ReplyDAOImpl implements com.ktehun.persistence.ReplyDAO {
 	@Inject
 	private SqlSession ses;
-	private String namespace ="com.ktehun.mapper.BoardMapper";
+	private String namespace ="com.ktehun.mapper.ReplyMapper";
 	@Override
 	public void create(ReplyVO vo) throws Exception {
 		// TODO Auto-generated method stub
@@ -33,7 +33,7 @@ public class ReplyDAOImpl implements com.ktehun.persistence.ReplyDAO {
 
 	@Override
 	public void delete(int no) throws Exception {
-		ses.delete(namespace+".update",no);
+		ses.delete(namespace+".delete",no);
 
 	}
 

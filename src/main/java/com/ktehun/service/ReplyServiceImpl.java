@@ -18,9 +18,9 @@ private ReplyDAO dao;
 	}
 
 	@Override
-	public List<ReplyVO> read(int no) throws Exception {
+	public List<ReplyVO> read(int bno) throws Exception {
 		
-		return dao.read(no);
+		return dao.read(bno);
 	}
 
 	@Override

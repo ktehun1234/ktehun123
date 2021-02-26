@@ -122,7 +122,7 @@
                   <c:forEach begin="${PagingParam.startPage}" end="${PagingParam.endPage }" var="pageNo">
 	
 	                     <li class="page-item">
-                     	<a class="page-link" href="listCri?page=${pageNo }&searchType=${Search.searchType}&searchWord=${Search.">${pageNo }</a>
+                     	<a class="page-link" href="listCri?page=${pageNo}">	</a>
                      </li>
 					
                   </c:forEach>
