@@ -18,7 +18,7 @@ public class massageDAOImpl implements MessageDAO {
 	}
 
 	@Override
-	public MessageVO eadMessage(int mid) throws Exception {
+	public MessageVO readMessage(int mid) throws Exception {
 
 		return ses.selectOne(namespace+".readMessage",mid);
 	}
