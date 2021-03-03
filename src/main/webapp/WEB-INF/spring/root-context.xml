@@ -31,6 +31,14 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
+	
+	<!-- 트랜잭션 처리 객체 설정 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 트랜잭션을 어노테이션으로 관리 하겠다  -->
+	<tx:annotation-driven/>
 	<!-- DAO 패키지오 ㅏService패키지를 자동 스캔하여 Bean을 생성할 있도록,,,  -->
 	<context:component-scan base-package="com.ktehun.persistence"></context:component-scan>
 	<context:component-scan base-package="com.ktehun.service"></context:component-scan>

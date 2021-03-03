@@ -59,12 +59,12 @@
                         <th>작성자</th>
                         <th>작성일</th>
                         <th>조회수</th>
-                        <th>좋아요</th>
+                        <th>댓글</th>
                      </tr>
                   </thead>
                   <c:forEach var="board" items="${boardList}" varStatus="status">
                   <c:choose>
-                  	<c:when test='${board.isdelete == "y"}'>
+                  	<c:when test='${board.isdelete == "Y"}'>
                 <tr>
                         <td><del>${board.no }</del></td>
                         <td><del>${board.title }</del></td>
@@ -72,7 +72,8 @@
                           <td><del><span class="sendTime" id="${status.count }"><fmt:formatDate
                                  value="${board.regdate }" type="both"
                                  pattern="yyyy-MM-dd HH:mm:ss" /></span></del></td>
-                  	
+                          <td><del><span class="badge badge-secondary">${board.viewnt }</span></del></td>
+                  		<td><del><span class="badge badge-secondary"></del></td>
                   	</tr>
                   	</c:when>
                   	<c:otherwise>
@@ -84,6 +85,8 @@
                         <td><span class="sendTime" id="${status.count }"><fmt:formatDate
                                  value="${board.regdate }" type="both"
                                  pattern="yyyy-MM-dd HH:mm:ss" /></span></td>
+                                 <td><span class="badge badge-secondary">${board.viewnt }</span></td>
+                     	<td><span class="badge badge-secondary">${board.replycnt }</span></td>
                      </tr>
                   	</c:otherwise>
                   </c:choose>
@@ -122,7 +125,7 @@
                   <c:forEach begin="${PagingParam.startPage}" end="${PagingParam.endPage }" var="pageNo">
 	
 	                     <li class="page-item">
-                     	<a class="page-link" href="listCri?page=${pageNo}">	</a>
+                     	<a class="page-link" href="listCri?page=${pageNo}">${pageNo}</a>
                      </li>
 					
                   </c:forEach>

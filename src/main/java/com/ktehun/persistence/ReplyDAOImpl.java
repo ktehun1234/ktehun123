@@ -37,4 +37,10 @@ public class ReplyDAOImpl implements com.ktehun.persistence.ReplyDAO {
 
 	}
 
+	@Override
+	public int getBno(int no) throws Exception {
+		
+		return ses.selectOne(namespace+".getBno",no);
+	}
+
 }

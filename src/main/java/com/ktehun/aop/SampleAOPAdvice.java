@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
-
 @Component //현재 클래스가 스프링의 빈으로 인식되도록
 @Aspect //AOP기능을 하는 클래스임을 선언
 public class SampleAOPAdvice {

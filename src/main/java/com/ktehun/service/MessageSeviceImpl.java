@@ -3,6 +3,7 @@ package com.ktehun.service;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ktehun.domain.MessageVO;
 import com.ktehun.persistence.MessageDAO;
@@ -14,6 +15,7 @@ public class MessageSeviceImpl implements MessageService {
 	
 	@Inject
 	private PointDAO pdao;
+	@Transactional
 	@Override
 	public void addMessage(MessageVO vo) throws Exception {
 		mdao.crate(vo);

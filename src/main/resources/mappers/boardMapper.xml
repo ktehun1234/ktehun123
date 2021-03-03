@@ -59,4 +59,13 @@
   			writer like concat('%',#{searchWord},'%')
   		</if>	
   	</select>
+  	
+  	<!-- 답글 달렸을 때 replycnt증가 -->
+  	<update id="updateReplyCnt">
+  		update tbl_board set replycnt = replycnt + #{amount} where no = #{no}
+  	</update>
+  	
+  	<update id="viewcnt">
+  		update tbl_board set viewnt = viewnt + 1 where no = #{no}
+  	</update>
   </mapper>

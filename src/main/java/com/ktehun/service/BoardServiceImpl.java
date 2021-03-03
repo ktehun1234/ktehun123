@@ -5,6 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ktehun.domain.BoardVO;
 import com.ktehun.domain.PagingCriteria;
@@ -29,12 +31,13 @@ public class BoardServiceImpl implements BoardService {
 		
 		return result;
 	}
-
+	@Transactional(isolation = Isolation.READ_COMMITTED) // 조회수 update처리 된 데이터에 한해 select 되게끔 격리 레벨을 올림
 	@Override
 	public BoardVO read(int no) throws Exception {
 		// 이후에 조회수 증가 하는 것을 AOP의 트랜잭션 처리로 마감
-		
+		dao.viewcnt(no);
 		BoardVO vo = dao.readBoard(no);
+		
 		return vo;
 		
 	}
@@ -71,7 +74,7 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> listCriteria(PagingCriteria cri) throws Exception {
 		return dao.listBoardCriteria(cri);
 	}
-
+	
 	@Override
 	public int getToTablBoardCnt() throws Exception {
 		
@@ -87,7 +90,6 @@ public class BoardServiceImpl implements BoardService {
 			
 			return dao.serchBoardCnt(scri);
 		}
-	
 
 
 
