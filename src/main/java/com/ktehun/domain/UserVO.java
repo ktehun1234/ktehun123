@@ -8,6 +8,7 @@ public class UserVO {
 	
 	
 	
+	
 	public String getUid() {
 		return uid;
 	}

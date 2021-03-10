@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.ktehun.service.BoardService;
 import com.ktehun.util.MediaConfirm;
 import com.ktehun.util.UploadFileProcess;
 import com.sun.net.httpserver.HttpExchange;
@@ -40,6 +42,9 @@ import com.sun.net.httpserver.HttpExchange;
  */
 @Controller
 public class HomeController {
+	
+	@Inject
+	private BoardService bercice;
 	
 	private static String uploadURL = "E:\\\\html\\\\lecture\\\\springUplode";
 	
@@ -69,11 +74,22 @@ public class HomeController {
 	public void uploadForm() {
 		
 	}
+	
+	
+	@RequestMapping(value="/doInterceptor",method = RequestMethod.POST)
+	public String doInterceptor(Locale locale,Model model) throws Exception{
+		System.out.println("/doInterceptor가 Post 방식으로");
+		
+		model.addAttribute("boardList",bercice.listAll());
+		return "home.jsp";
+	}
 	@RequestMapping(value="/uploadAjax" , method = RequestMethod.GET)
 	public void uploadAjax() {
 		
 	}
 	
+
+
 	@RequestMapping(value = "/uploadAjax" , method = RequestMethod.POST,produces = "text/plain; charset=UTF-8")
 	public ResponseEntity<String> uploadAjax(HttpServletRequest request,MultipartFile file, Model model) {
 		System.out.println("파일이름 : "+file.getOriginalFilename());
@@ -167,7 +183,9 @@ public class HomeController {
 	    	new File(originalFile).delete();
 	    	new File(thumbFile).delete();
 	     }
-	     return new ResponseEntity<String>("delete_Success_OK",HttpStatus.OK);
+	     
+	     // DB제거
+	     return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 		
 	private String uploadFile(HttpServletRequest request, String originalFilename, byte[] file) throws IOException {

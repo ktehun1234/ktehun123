@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -46,6 +46,18 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/board/listCri" class="nav-link">board</a>
       </li>
+      <c:catch>
+      	<c:when test="${loginMember == null }">
+     <li class="nav-item d-none d-sm-inline-block">
+        <a href="/user/login" class="nav-link">login</a>
+      </li>
+      </c:when>
+      <c:otherwise>
+      	<li class="nav-item d-none d-sm-inline-block">
+        ${loginMember.uid}
+      </li>
+      </c:otherwise>
+      </c:catch>
     </ul>
 
     <!-- SEARCH FORM -->

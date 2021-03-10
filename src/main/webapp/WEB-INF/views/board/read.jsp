@@ -260,20 +260,23 @@
 				</script>
 				
 				<div>
+				<c:if test="${loginMember.uid == board.writer }">
 					<button type="button" class="btn btn-success" id="rewriteBoard"
 						onclick="location.href='/board/modi?no=${board.no}'">수정하기</button>
 					<button type="button" class="btn btn-info" id="deleteBoard"
 						onclick="location.href='/board/remove?no=${board.no}'">삭제하기</button>
+				</c:if>
+				
 					<button type="button" class="btn btn-primary"
 						onclick="location.href='/board/listCri?page=${param.page}'">리스트페이지로</button>
-
+	<c:if test="${loginMember != null }">
 					<button type="button" class="btn btn-primary"
-						onclick="showReplyBox();">댓글달기</button>
+						onclick="showReplyBox();">댓글달기</button></c:if>
 				</div>
 				<div id="inputReplyBox"
 					style="padding: 15px; border: 1px dotted gray; display: none;">
 					
-						작성자 : <input type="text" name="replyer" id="newReplyWriter" /> 
+						작성자 : <input type="text" name="replyer" id="newReplyWriter" "/> 
 						댓글 입력 : <input type="text" name="replytext" id="newReplyText" />
 
 						<button id="replyAddBtn" onclick="addReply();">ADD Reply</button>
